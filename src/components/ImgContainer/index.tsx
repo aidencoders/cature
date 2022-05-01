@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import { nanoid } from "nanoid";
 
-import { ImageData } from "../App";
-import DEFAULT_CAT_URL from "../../constant";
+import URL from "../../constant";
+import { useAppSelector } from "../../store/hooks";
 
 const WrapperUl = styled.ul`
   margin-top: 3rem;
@@ -45,20 +45,20 @@ const StyledImg = styled.img`
   }
 `;
 
-type Props = {
-  images: ImageData[];
-};
+function ImgContainer() {
+  const images = useAppSelector((state: any) => {
+    return state.image.images;
+  });
 
-function ImgContainer({ images }: Props) {
   return (
     <WrapperUl>
       {images &&
-        images.map((image) => {
+        images.map((image: any) => {
           return (
             <StyledLi key={nanoid()}>
               <StyledSpan>{image.name}</StyledSpan>
               <StyledImg
-                src={image.image ? image.image.url : DEFAULT_CAT_URL}
+                src={image.image ? image.image.url : URL.DEFAULT_CAT_URL}
                 alt={image.name}
               />
             </StyledLi>
