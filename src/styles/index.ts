@@ -7,9 +7,13 @@ const GlobalStyles = createGlobalStyle`
   ${reset};
 
   body {
-    width: 100%;
     height: auto;
     min-height: 100vh;
+    width: 100%;
+    max-width: 1024px;
+    margin: 0 auto;
+    text-align: center;
+}
 
     @font-face {
       font-display: block;
@@ -24,6 +28,11 @@ const GlobalStyles = createGlobalStyle`
 
   img {
     user-select: none;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+    border-radius: 0.3em;
   }
 
   a {
