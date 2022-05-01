@@ -15,9 +15,12 @@ const initialState: ImageState = {
 
 export const fetchingImageAsync = createAsyncThunk(
   "image/fetchImages",
-  async () => {
+  async (keyword?: string) => {
+    const url = keyword ? `${URL.BASE_URL}/search?q=${keyword}` : URL.BASE_URL;
+
+    console.log(url);
     const { data } = await axios.get<ImageData[], AxiosResponse<ImageData[]>>(
-      URL.BASE_URL,
+      url,
     );
 
     return data;

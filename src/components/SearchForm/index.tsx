@@ -1,4 +1,7 @@
+import React, { ChangeEventHandler, useState } from "react";
+import { useDispatch } from "react-redux";
 import styled from "styled-components";
+import { fetchingImageAsync } from "../../features/image/imageSlice";
 
 const StyledForm = styled.form`
   width: 100%;
@@ -33,10 +36,31 @@ const StyledButton = styled.button`
 `;
 
 function SearchForm() {
+  const [keyword, setKeyword] = useState("");
+  const dispatch = useDispatch();
+
+  const handleSearchKeywordChange: ChangeEventHandler<HTMLInputElement> = ({
+    target: { value },
+  }) => {
+    setKeyword(value);
+  };
+
+  const handleSearchButtonClick = (
+    event: React.MouseEvent<HTMLButtonElement>,
+  ) => {
+    event.preventDefault();
+
+    dispatch(fetchingImageAsync(keyword));
+  };
+
   return (
     <StyledForm>
-      <StyledInput />
-      <StyledButton>Search</StyledButton>
+      <StyledInput
+        type="text"
+        value={keyword}
+        onChange={handleSearchKeywordChange}
+      />
+      <StyledButton onClick={handleSearchButtonClick}>Search</StyledButton>
     </StyledForm>
   );
 }
