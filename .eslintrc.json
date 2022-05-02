@@ -37,12 +37,6 @@
         "ignorePropertyModificationsFor": ["state"]
       }
     ],
-    "import/no-extraneous-dependencies": [
-      "error",
-      {
-        "devDependencies": ["**/*.test.jsx", "**/test-utils.jsx"]
-      }
-    ],
     "import/extensions": [
       "error",
       "ignorePackages",
@@ -55,7 +49,8 @@
     ],
     "react/react-in-jsx-scope": "off",
     "react/jsx-props-no-spreading": "off",
-    "react/jsx-filename-extension": ["warn", { "extensions": [".tsx"] }]
+    "react/jsx-filename-extension": ["warn", { "extensions": [".tsx"] }],
+    "import/no-extraneous-dependencies": ["error", { "peerDependencies": true }]
   },
   "globals": {
     "chrome": "writable"

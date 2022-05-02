@@ -18,7 +18,6 @@ export const fetchingImageAsync = createAsyncThunk(
   async (keyword?: string) => {
     const url = keyword ? `${URL.BASE_URL}/search?q=${keyword}` : URL.BASE_URL;
 
-    console.log(url);
     const { data } = await axios.get<ImageData[], AxiosResponse<ImageData[]>>(
       url,
     );
