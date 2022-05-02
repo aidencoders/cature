@@ -1,14 +1,14 @@
 import { ThemeProvider } from "styled-components";
 import { useEffect } from "react";
-// import axios, { AxiosResponse } from "axios";
-
 import { useDispatch } from "react-redux";
+
 import theme from "../../styles/theme";
+import { fetchingImageAsync } from "../../features/image/imageSlice";
+import { AppDispatch } from "../../store";
+
 import Header from "../Header";
 import SearchForm from "../SearchForm";
 import ImgContainer from "../ImgContainer";
-import { fetchingImageAsync } from "../../features/image/imageSlice";
-import { AppDispatch } from "../../store";
 
 export type ImageData = {
   image: {

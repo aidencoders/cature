@@ -1,6 +1,8 @@
-import SearchForm from ".";
-import { cleanup, fireEvent, render, screen } from "../../utils/testUtils";
 import "@testing-library/jest-dom/extend-expect";
+
+import { cleanup, render, screen } from "../../utils/testUtils";
+
+import SearchForm from ".";
 
 afterEach(cleanup);
 describe("SearchForm component test", () => {

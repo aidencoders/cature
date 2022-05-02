@@ -3,11 +3,10 @@ import { render as testRender, RenderOptions } from "@testing-library/react";
 import { Provider } from "react-redux";
 import { ThemeProvider } from "styled-components";
 import { configureStore, EnhancedStore } from "@reduxjs/toolkit";
+
 import { RootState } from "../../store/index";
-
-import imageReducer from "../../features/image/imageSlice";
-
 import theme from "../../styles/theme";
+import imageReducer from "../../features/image/imageSlice";
 
 type CustomRenderOptions = {
   preloadedState?: RootState;

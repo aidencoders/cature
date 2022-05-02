@@ -7,14 +7,14 @@ const WrapperHeader = styled.div`
   padding: 1.5em 0;
 `;
 
-const Content = styled.p`
+const StyledP = styled.p`
   font-size: 2em;
 `;
 
 function Header() {
   return (
     <WrapperHeader>
-      <Content>😸 고양이 사진 갤러리 😻</Content>
+      <StyledP>😸 고양이 사진 갤러리 😻</StyledP>
     </WrapperHeader>
   );
 }
